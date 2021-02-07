@@ -1,0 +1,5 @@
+user: automation
+home: "/home/{{ user }}"
+
+codename: heimdall
+app_data: "{{ home }}/.diesel/{{ codename }}"
