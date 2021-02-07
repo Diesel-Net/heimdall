@@ -1,5 +1,10 @@
 user: automation
 home: "/home/{{ user }}"
 
-codename: heimdall
-app_data: "{{ home }}/.diesel/{{ codename }}"
+git_repository: heimdall
+app_data: "{{ home }}/.diesel/{{ git_repository }}"
+
+proxy_path_prefix: /heimdall
+proxy_router_main: '{{ git_repository }}-main'
+proxy_router_main_strip: '{{ proxy_router_main }}-strip '
+proxy_router_main_redirect: '{{ proxy_router_main }}-redirect'
