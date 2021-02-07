@@ -22,5 +22,4 @@ trigger:
     - development
   event:
     - push
-
----
+...
