@@ -9,7 +9,11 @@ services:
     volumes:
       - /etc/localtime:/etc/localtime
       - /etc/ssl/certs/:/etc/ssl/certs/
-      - '{{ app_data }}/traefik.yaml:/etc/traefik/dynamic/traefik.yaml:ro'
+      - {{ app_data }}/config:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Los_Angeles
     deploy:
       labels:
         - traefik.enable=true

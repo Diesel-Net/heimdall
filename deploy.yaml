@@ -5,17 +5,10 @@
 
   tasks:
 
-    - name: 'Ensure existence of configuration directory: {{ app_data }}'
-      command: mkdir -p {{ app_data }}/certs
+    - name: 'Ensure existence of configuration directory: {{ app_data }}/config'
+      command: mkdir -p {{ app_data }}/config
       args:
         warn: no
-      become: yes
-      become_user: "{{ user }}"
-
-    - name: 'Render configuration to {{ app_data }}/config.yaml'
-      template:
-        src: config.yaml.j2
-        dest: "{{ app_data }}/config.yaml"
       become: yes
       become_user: "{{ user }}"
 
