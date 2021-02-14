@@ -1,0 +1,10 @@
+user: automation
+home: "/home/{{ user }}"
+
+git_repository: heimdall
+app_data: "{{ home }}/.diesel/{{ git_repository }}"
+
+proxy_domains:
+  - heimdall.diesel.net
+
+proxy_router_main: '{{ git_repository }}-main'
